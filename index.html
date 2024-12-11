@@ -15,10 +15,33 @@
             height: 900px;
             box-shadow: 5px 5px 5px #888; 
         }
+
+        #map-legend {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.5em;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+    }
+        
     </style>
 </head>
 <body>
     <div id="map"></div>
+    <div id="map-legend" class="legend">
+        <h4>Simbología</h4>
+        <div><span style="background-color: #d72408; width: 20px; height: 20px; display: inline-block; border-radius: 50%;"></span> Estación MX1</div>
+        <div><span style="background-color: #ec0ab2; width: 20px; height: 20px; display: inline-block; border-radius: 50%;"></span> Estación MX4</div>
+    </div>
+    
+    
     <script>
         var map = L.map("map").setView([19.4094, -99.1192], 11);
         L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
